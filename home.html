@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weedman Calculator</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="vertical-center">
+    <div class="container col-sm-6 col-sm-offset-3 rounded" align="center">
+        <h1>Weedman Calculator</h1>
+        <input type="number" id="numRows" placeholder="# Of Jobs">
+        <button onclick="rowGen()">Submit</button>
+        <table id="houses">
+            <tr>
+                <th >Size</th>
+            </tr>
+            <tr id="test">
+                <td><input type="number" id="houseSize"></td>
+            </tr>
+        </table>
+
+        <button type="submit" onclick="calculate()">Finished</button>
+    </div>
+</div>
+</body>
+</html>
