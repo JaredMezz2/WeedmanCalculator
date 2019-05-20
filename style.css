@@ -5,7 +5,7 @@ body {
     background: -webkit-radial-gradient(center, ellipse cover,  #fefefd 0%,#dce3c4 62%,#aebf76 100%); /* Chrome10-25,Safari5.1-6 */
     background: radial-gradient(ellipse at center,  #fefefd 0%,#dce3c4 62%,#aebf76 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefd', endColorstr='#aebf76',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+    font-family: Arial;
 }
 
 .vertical-center {
@@ -38,4 +38,17 @@ th {
 
 table {
     margin: 10px 0;
+}
+
+#houseSize {
+    margin: 1px 0;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 1px solid rgb(137, 137, 137);
+
+}
+
+#numRows {
+    padding: 5px 5px;
+    background-color: rgba(255, 255, 255, 0.25);
 }
