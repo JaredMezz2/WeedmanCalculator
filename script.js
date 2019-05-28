@@ -1,11 +1,11 @@
 function rowGen() {
-    var val = document.getElementById("numRows").value;
-    var tableRef = document.getElementById("houses");
+    const val = document.getElementById("numRows").value;
+    const tableRef = document.getElementById("houses");
 
     if (!isNaN(val)) {
         for (i=0;i < val-1;i++) {
             let newRow = tableRef.insertRow();
-            var cloneRow = document.createElement("input");
+            const cloneRow = document.createElement("input");
             cloneRow.type = "number";
             cloneRow.id = "houseSize";
             newRow.appendChild(cloneRow);
@@ -16,7 +16,7 @@ function rowGen() {
 function calculate() {
     var totalSize = 0;
     var totalProfit = 0;
-    var sizes = document.querySelectorAll("#houseSize");
+    const sizes = document.querySelectorAll("#houseSize");
 
     sizes.forEach(size => {
         if (size.value !== "") {
@@ -27,9 +27,24 @@ function calculate() {
         }
     });
 
-    alert (totalSize);
-    alert (totalProfit);
+    // # of jobs , total size of houses, total profit from houses
+    return [sizes.length, totalSize, totalProfit.toFixed(2)];
+}
 
+function finished() {
+    document.querySelector(".jobSelection").style.display = "none";
+    document.querySelector(".outputInfo").style.display = "block";
+
+    const totals = calculate();
+    document.querySelector(".jobTotal").innerHTML = totals[0];
+    document.querySelector(".sizeTotal").innerHTML = totals[1];
+    document.querySelector(".profitTotal").innerHTML = totals[2];
+
+}
+
+function back() {
+    document.querySelector(".outputInfo").style.display = "none";
+    document.querySelector(".jobSelection").style.display = "block";
 }
 
 // all pre tax & percentage
@@ -41,13 +56,13 @@ var weedDict = {
     4.5: 88,
     5.5: 94,
     6.5: 100,
-    7.5: 0,
+    7.5: 107,
     8.5: 113,
     9.5: 116,
     10.5: 122,
-    11.5: 0,
+    11.5: 128,
     12.5: 133,
-    13.5: 0,
+    13.5: 139,
     14.5: 0,
     15.5: 0,
     16.5: 0,
