@@ -48,6 +48,7 @@ function back() {
     document.querySelector(".jobSelection").style.display = "block";
 }
 
+// isnt currently working, php file may not be running?
 function dbSubmit(){
     alert ("db");
     var x = new XMLHttpRequest();
