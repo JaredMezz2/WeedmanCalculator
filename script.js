@@ -40,11 +40,20 @@ function finished() {
     document.querySelector(".sizeTotal").innerHTML = totals[1];
     document.querySelector(".profitTotal").innerHTML = totals[2];
 
+    dbSubmit();
 }
 
 function back() {
     document.querySelector(".outputInfo").style.display = "none";
     document.querySelector(".jobSelection").style.display = "block";
+}
+
+function dbSubmit(){
+    alert ("db");
+    var x = new XMLHttpRequest();
+    x.open("GET", "dbConn.php", true);
+    x.send();
+    return false;
 }
 
 // all pre tax & percentage
