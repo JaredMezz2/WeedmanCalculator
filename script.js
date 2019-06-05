@@ -1,33 +1,15 @@
-function rowGen() {
-    const val = document.getElementById("numRows").value;
-    const tableRef = document.getElementById("houses");
-
-    if (!isNaN(val)) {
-        for (i=0;i < val-1;i++) {
-            let newRow = tableRef.insertRow();
-            const cloneRow = document.createElement("input");
-            cloneRow.type = "number";
-            cloneRow.id = "houseSize";
-            newRow.appendChild(cloneRow);
-        }
-    }
-}
-
 function calculate() {
     var totalSize = 0;
     var totalProfit = 0;
-    const sizes = document.querySelectorAll("#houseSize");
 
-    sizes.forEach(size => {
-        if (size.value !== "") {
-            totalSize += parseFloat(size.value);
-
-            // profit calc for weed spray, 7%
-            totalProfit += weedDict[parseFloat(size.value)] / 1.13 * 0.07;
-        }
+    const sizes = document.querySelector("#houseSizes").value.split(" ").map(val => {
+        return parseFloat(val)
     });
 
-    document.getElementById("houseSize").focus();
+    sizes.forEach(size => {
+        totalSize += size;
+        totalProfit += weedDict[size] / 1.13 * 0.07;
+    });
     // # of jobs , total size of houses, total profit from houses
     return [sizes.length, totalSize, totalProfit.toFixed(2)];
 }

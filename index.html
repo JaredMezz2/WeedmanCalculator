@@ -13,19 +13,9 @@
         <h1>Weedman Calculator</h1>
 
         <div class="jobSelection">
-            <input type="number" id="numRows" placeholder=" # Of Jobs">
-            <button onclick="rowGen()" class="btn btn-outline-dark">Submit</button>
-            <table id="houses">
-                <tr>
-                    <th >Size</th>
-                </tr>
-                <tr id="test">
-                    <td><input type="number" id="houseSize"></td>
-                </tr>
-            </table>
-
-            <button type="submit" onclick="finished()" class="btn btn-outline-dark">Finished</button>
-        </div>
+            <input id="houseSizes" placeholder=" Job Sizes" autofocus>
+            <button onclick="finished()" class="btn btn-outline-dark">Submit</button>
+         </div>
 
         <div class="outputInfo">
             <h4><b>Jobs:</b> <span class="jobTotal"></span></h4>

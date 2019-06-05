@@ -48,9 +48,10 @@ table {
 
 }
 
-#numRows {
+#houseSizes {
     padding: 5px 5px;
     background-color: rgba(255, 255, 255, 0.25);
+    width: 75%;
 }
 
 .outputInfo {
