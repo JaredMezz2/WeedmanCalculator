@@ -22,8 +22,8 @@ function calculate() {
         if (size.value !== "") {
             totalSize += parseFloat(size.value);
 
-            // profit calc for weed spray, 9%
-            totalProfit += weedDict[parseFloat(size.value)] / 1.13 * 0.09;
+            // profit calc for weed spray, 7%
+            totalProfit += weedDict[parseFloat(size.value)] / 1.13 * 0.07;
         }
     });
 
@@ -40,7 +40,13 @@ function finished() {
     document.querySelector(".sizeTotal").innerHTML = totals[1];
     document.querySelector(".profitTotal").innerHTML = totals[2];
 
-    dbSubmit();
+    const dayMessage = document.querySelector(".dayMessage");
+
+    if (totals[2] > 145) {dayMessage.innerHTML = "Be quick as heck!"}
+    else {dayMessage.innerHTML = "Slow day my guy."}
+
+    // dbsubmit doesnt work yet.
+    // dbSubmit();
 }
 
 function back() {
@@ -50,7 +56,6 @@ function back() {
 
 // isnt currently working, php file may not be running?
 function dbSubmit(){
-    alert ("db");
     var x = new XMLHttpRequest();
     x.open("GET", "dbConn.php", true);
     x.send();
