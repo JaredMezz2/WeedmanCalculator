@@ -27,6 +27,7 @@ function calculate() {
         }
     });
 
+    document.getElementById("houseSize").focus();
     // # of jobs , total size of houses, total profit from houses
     return [sizes.length, totalSize, totalProfit.toFixed(2)];
 }
